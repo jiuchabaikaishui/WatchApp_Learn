@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6E6587641DA8CF5C0089B973 /* TomorrowViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E6587631DA8CF5C0089B973 /* TomorrowViewController.m */; };
 		6EFF34F81D9CBDFE00D0B089 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EFF34F71D9CBDFE00D0B089 /* main.m */; };
 		6EFF34FB1D9CBDFE00D0B089 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EFF34FA1D9CBDFE00D0B089 /* AppDelegate.m */; };
 		6EFF34FE1D9CBDFE00D0B089 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EFF34FD1D9CBDFE00D0B089 /* ViewController.m */; };
@@ -104,6 +105,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		6E6587621DA8CF5C0089B973 /* TomorrowViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TomorrowViewController.h; sourceTree = "<group>"; };
+		6E6587631DA8CF5C0089B973 /* TomorrowViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TomorrowViewController.m; sourceTree = "<group>"; };
 		6EFF34F31D9CBDFE00D0B089 /* WatchApp_Learn.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WatchApp_Learn.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6EFF34F71D9CBDFE00D0B089 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		6EFF34F91D9CBDFE00D0B089 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -213,6 +216,8 @@
 				6EFF34FA1D9CBDFE00D0B089 /* AppDelegate.m */,
 				6EFF34FC1D9CBDFE00D0B089 /* ViewController.h */,
 				6EFF34FD1D9CBDFE00D0B089 /* ViewController.m */,
+				6E6587621DA8CF5C0089B973 /* TomorrowViewController.h */,
+				6E6587631DA8CF5C0089B973 /* TomorrowViewController.m */,
 				6EFF34FF1D9CBDFE00D0B089 /* Main.storyboard */,
 				6EFF35021D9CBDFE00D0B089 /* Assets.xcassets */,
 				6EFF35041D9CBDFE00D0B089 /* LaunchScreen.storyboard */,
@@ -457,9 +462,9 @@
 				6EFF34F21D9CBDFE00D0B089 /* WatchApp_Learn */,
 				6EFF350B1D9CBDFE00D0B089 /* WatchApp_LearnTests */,
 				6EFF35161D9CBDFE00D0B089 /* WatchApp_LearnUITests */,
+				6EFF356B1D9CC07F00D0B089 /* WatchApp_Learn_Today */,
 				6EFF352A1D9CBE4D00D0B089 /* Watch */,
 				6EFF35361D9CBE4D00D0B089 /* Watch Extension */,
-				6EFF356B1D9CC07F00D0B089 /* WatchApp_Learn_Today */,
 			);
 		};
 /* End PBXProject section */
@@ -524,6 +529,7 @@
 				6EFF34FE1D9CBDFE00D0B089 /* ViewController.m in Sources */,
 				6EFF34FB1D9CBDFE00D0B089 /* AppDelegate.m in Sources */,
 				6EFF34F81D9CBDFE00D0B089 /* main.m in Sources */,
+				6E6587641DA8CF5C0089B973 /* TomorrowViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -715,7 +721,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				INFOPLIST_FILE = WatchApp_Learn/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.etongxing.www.WatchApp-Learn";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -728,7 +734,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				INFOPLIST_FILE = WatchApp_Learn/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.etongxing.www.WatchApp-Learn";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -847,7 +853,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				INFOPLIST_FILE = WatchApp_Learn_Today/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.etongxing.www.WatchApp-Learn.WatchApp-Learn-Today";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -859,7 +865,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				INFOPLIST_FILE = WatchApp_Learn_Today/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.etongxing.www.WatchApp-Learn.WatchApp-Learn-Today";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -886,6 +892,7 @@
 				6EFF35221D9CBDFE00D0B089 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		6EFF35231D9CBDFE00D0B089 /* Build configuration list for PBXNativeTarget "WatchApp_LearnTests" */ = {
 			isa = XCConfigurationList;
@@ -894,6 +901,7 @@
 				6EFF35251D9CBDFE00D0B089 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		6EFF35261D9CBDFE00D0B089 /* Build configuration list for PBXNativeTarget "WatchApp_LearnUITests" */ = {
 			isa = XCConfigurationList;
@@ -902,6 +910,7 @@
 				6EFF35281D9CBDFE00D0B089 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		6EFF354A1D9CBE4D00D0B089 /* Build configuration list for PBXNativeTarget "Watch Extension" */ = {
 			isa = XCConfigurationList;
@@ -910,6 +919,7 @@
 				6EFF354C1D9CBE4D00D0B089 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		6EFF354E1D9CBE4D00D0B089 /* Build configuration list for PBXNativeTarget "Watch" */ = {
 			isa = XCConfigurationList;
@@ -918,6 +928,7 @@
 				6EFF35501D9CBE4D00D0B089 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		6EFF35791D9CC07F00D0B089 /* Build configuration list for PBXNativeTarget "WatchApp_Learn_Today" */ = {
 			isa = XCConfigurationList;
@@ -926,6 +937,7 @@
 				6EFF357B1D9CC07F00D0B089 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
