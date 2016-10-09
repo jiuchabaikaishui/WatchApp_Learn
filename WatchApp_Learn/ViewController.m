@@ -11,6 +11,7 @@
 @interface ViewController ()<UITableViewDelegate, UITableViewDataSource>
 
 @property (strong, nonatomic) NSMutableArray *dataArr;
+@property (strong, nonatomic) NSMutableArray *selectedDataArr;
 @property (weak, nonatomic) UITableView *tableView;
 
 @end
@@ -25,6 +26,14 @@
     }
     
     return _dataArr;
+}
+- (NSMutableArray *)selectedDataArr
+{
+    if (_selectedDataArr == nil) {
+        _selectedDataArr = [NSMutableArray arrayWithCapacity:1];
+    }
+    
+    return _selectedDataArr;
 }
 
 #pragma mark - 控制器周期
@@ -60,6 +69,16 @@
     button.exclusiveTouch = YES;
     UIBarButtonItem *rightItem = [[UIBarButtonItem alloc] initWithCustomView:button];
     self.navigationItem.rightBarButtonItem = rightItem;
+    
+    button = [UIButton buttonWithType:UIButtonTypeSystem];
+    H = 21.5;
+    [button setFrame:CGRectMake(0, 0, H*1.5, H)];
+    [button setImageEdgeInsets:UIEdgeInsetsMake(0, 6, 0, -6)];
+    [button setTitle:@"编辑" forState:UIControlStateNormal];
+    [button addTarget:self action:@selector(leftBarAction:) forControlEvents:UIControlEventTouchUpInside];
+    button.exclusiveTouch = YES;
+    UIBarButtonItem *leftItem = [[UIBarButtonItem alloc] initWithCustomView:button];
+    self.navigationItem.leftBarButtonItem = leftItem;
 }
 
 #pragma mark - 触摸点击方法
@@ -74,6 +93,7 @@
         UITextField *textField = [alertCtr.textFields lastObject];
         [self.dataArr addObject:textField.text];
         [self.tableView insertRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:self.dataArr.count - 1 inSection:0]] withRowAnimation:UITableViewRowAnimationNone];
+        [self.tableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:self.dataArr.count - 1 inSection:0] atScrollPosition:UITableViewScrollPositionNone animated:YES];
     }];
     okAction.enabled = NO;
     [alertCtr addAction:okAction];
@@ -82,6 +102,29 @@
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(textFieldChange:) name:UITextFieldTextDidChangeNotification object:nil];
     }];
     [self presentViewController:alertCtr animated:YES completion:nil];
+}
+- (void)leftBarAction:(UIButton *)sender
+{
+    if (self.tableView.editing) {
+        self.tableView.editing = NO;
+        [sender setTitle:@"编辑" forState:UIControlStateNormal];
+        if (self.selectedDataArr.count > 0) {
+            NSMutableArray *deleteArr = [NSMutableArray arrayWithCapacity:1];
+            NSIndexPath *deleteIndexPath = nil;
+            for (NSString *str in self.selectedDataArr) {
+                deleteIndexPath = [NSIndexPath indexPathForRow:[self.dataArr indexOfObject:str] inSection:0];
+                [deleteArr addObject:deleteIndexPath];
+            }
+            [self.selectedDataArr removeObjectsInArray:self.selectedDataArr];
+            [self.selectedDataArr removeAllObjects];
+            [self.tableView deleteRowsAtIndexPaths:deleteArr withRowAnimation:UITableViewRowAnimationNone];
+        }
+    }
+    else
+    {
+        self.tableView.editing = YES;
+        [sender setTitle:@"删除" forState:UIControlStateNormal];
+    }
 }
 - (void)textFieldChange:(NSNotification *)sender
 {
@@ -112,5 +155,65 @@
     
     return cell;
 }
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if (!tableView.editing) {
+        [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    }
+    else
+    {
+        [self.selectedDataArr addObject:self.dataArr[indexPath.row]];
+    }
+}
+- (void)tableView:(UITableView *)tableView didDeselectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if (tableView.editing) {
+        [self.selectedDataArr removeObject:self.dataArr[indexPath.row]];
+    }
+}
+//- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
+//{
+//    return YES;
+//}
+//- (NSString *)tableView:(UITableView *)tableView titleForDeleteConfirmationButtonForRowAtIndexPath:(NSIndexPath *)indexPath
+//{
+//    return @"删除";
+//}
+//- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
+//{
+//    if (editingStyle == UITableViewCellEditingStyleDelete) {
+//        [self.dataArr removeObjectAtIndex:indexPath.row];
+//        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationNone];
+//    }
+//    else if (editingStyle == UITableViewCellEditingStyleInsert)
+//    {
+//        
+//    }
+//    else
+//    {
+//        
+//    }
+//}
+- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return YES;
+}
+- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)sourceIndexPath toIndexPath:(NSIndexPath *)destinationIndexPath
+{
+    [self.dataArr exchangeObjectAtIndex:sourceIndexPath.row withObjectAtIndex:destinationIndexPath.row];
+    NSString *exchangeStr = self.dataArr[sourceIndexPath.row];
+    [self.dataArr removeObjectAtIndex:sourceIndexPath.row];
+    [self.dataArr insertObject:exchangeStr atIndex:destinationIndexPath.row];
+}
+//- (UITableViewCellEditingStyle)tableView:(UITableView *)tableView editingStyleForRowAtIndexPath:(NSIndexPath *)indexPath
+//{
+//    if (tableView.editing) {
+//        return UITableViewCellEditingStyleDelete|UITableViewCellEditingStyleInsert;
+//    }
+//    else
+//    {
+//        return UITableViewCellEditingStyleDelete;
+//    }
+//}
 
 @end

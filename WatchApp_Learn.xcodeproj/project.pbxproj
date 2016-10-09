@@ -107,6 +107,8 @@
 /* Begin PBXFileReference section */
 		6E6587621DA8CF5C0089B973 /* TomorrowViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TomorrowViewController.h; sourceTree = "<group>"; };
 		6E6587631DA8CF5C0089B973 /* TomorrowViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TomorrowViewController.m; sourceTree = "<group>"; };
+		6E6587651DA8F1850089B973 /* WatchApp_Learn_Today.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = WatchApp_Learn_Today.entitlements; sourceTree = "<group>"; };
+		6E6587661DA8F33B0089B973 /* WatchApp_Learn.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = WatchApp_Learn.entitlements; sourceTree = "<group>"; };
 		6EFF34F31D9CBDFE00D0B089 /* WatchApp_Learn.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WatchApp_Learn.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6EFF34F71D9CBDFE00D0B089 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		6EFF34F91D9CBDFE00D0B089 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -212,6 +214,7 @@
 		6EFF34F51D9CBDFE00D0B089 /* WatchApp_Learn */ = {
 			isa = PBXGroup;
 			children = (
+				6E6587661DA8F33B0089B973 /* WatchApp_Learn.entitlements */,
 				6EFF34F91D9CBDFE00D0B089 /* AppDelegate.h */,
 				6EFF34FA1D9CBDFE00D0B089 /* AppDelegate.m */,
 				6EFF34FC1D9CBDFE00D0B089 /* ViewController.h */,
@@ -295,6 +298,7 @@
 		6EFF356E1D9CC07F00D0B089 /* WatchApp_Learn_Today */ = {
 			isa = PBXGroup;
 			children = (
+				6E6587651DA8F1850089B973 /* WatchApp_Learn_Today.entitlements */,
 				6EFF356F1D9CC07F00D0B089 /* TodayViewController.h */,
 				6EFF35701D9CC07F00D0B089 /* TodayViewController.m */,
 				6EFF35721D9CC07F00D0B089 /* MainInterface.storyboard */,
@@ -426,6 +430,12 @@
 				TargetAttributes = {
 					6EFF34F21D9CBDFE00D0B089 = {
 						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = XCL3BJXWK5;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 					6EFF350B1D9CBDFE00D0B089 = {
 						CreatedOnToolsVersion = 7.3.1;
@@ -443,6 +453,12 @@
 					};
 					6EFF356B1D9CC07F00D0B089 = {
 						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = XCL3BJXWK5;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -719,12 +735,16 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = WatchApp_Learn/WatchApp_Learn.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				INFOPLIST_FILE = WatchApp_Learn/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.etongxing.www.WatchApp-Learn";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -732,12 +752,16 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = WatchApp_Learn/WatchApp_Learn.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				INFOPLIST_FILE = WatchApp_Learn/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.etongxing.www.WatchApp-Learn";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};
@@ -852,6 +876,7 @@
 		6EFF357A1D9CC07F00D0B089 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = WatchApp_Learn_Today/WatchApp_Learn_Today.entitlements;
 				INFOPLIST_FILE = WatchApp_Learn_Today/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
@@ -864,6 +889,7 @@
 		6EFF357B1D9CC07F00D0B089 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = WatchApp_Learn_Today/WatchApp_Learn_Today.entitlements;
 				INFOPLIST_FILE = WatchApp_Learn_Today/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
